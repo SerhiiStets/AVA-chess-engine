@@ -44,7 +44,7 @@ To output more information (including your engine's thinking output and debuggin
 ```
 $ python3 lichess-bot.py -v
 ```
-### Playing against bot
+## Playing against bot
 Create a [challenge](https://lichess.org/?user=AVA-chess-engine#friend) and enjoy!
 
 ## Contributing
