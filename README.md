@@ -6,7 +6,7 @@ Bot uses [Lichess-bot](https://github.com/ShailChoksi/lichess-bot). A bridge bet
 Bot uses a *minimax algorithm*. It recursively goes through tree of legal moves evaluating the position to determine the best next move. Using *Alpha-Beta Pruning* it cuts off branches in the game tree	which need not be searched because a better move is already available.
 ## Installation
  **NOTE: Only Python 3.7 or later is supported!**
-1. Clone [lichess-bot](https://github.com/ShailChoksi/lichess-bot/edit/master/README.md#how-to-install) installation giude to install lichess-bot
+1. Clone [lichess-bot](https://github.com/ShailChoksi/lichess-bot/edit/master/README.md#how-to-install) installation guide to install lichess-bot
 ```
 $ git clone https://github.com/ShailChoksi/lichess-bot.git
 $ cd lichess-bot
@@ -19,14 +19,14 @@ $ source ./venv/bin/activate
 $ python3 -m pip install -r requirements.txt
 ```
 3. Copy `config.yml.default` to `config.yml`
-4. Add python scrpits from this repo to `engines` directory
-  - `main.py`
+4. Add python scripts from this repo to `engines` directory
+  - `AVA_engine.py`
   - `bonuses.py`
 5. In `strategies.py` import `play` from `main.py` and add
 ```python
 class AVAChessEngine(MinimalEngine):
-    def search(self, board, *args):
-        return PlayResult(play(board), None)
+    def search(self, board, timeLeft, *args):
+        return PlayResult(play(board, timeLeft), None)
 ```
 6. In the `config.yml`, change the engine protocol to `homemade`
 7. In the `config.yml`, change the name from `engine_name` to the name of your class
